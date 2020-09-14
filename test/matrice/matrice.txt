@@ -1,0 +1,195 @@
+Kratak uvod u matrice i determinante
+Dragan Mašulović
+7. maj 2020.
+
+Sažetak
+
+Analiziranje rešenja sistema jednačina nas vodi do pojma determinante, čemo je posvećen početak
+poglavlja. Nakon toga uvodimo pojam matrice i pokazujemo da je najsločenija i najneintuitivnija
+operacija nad matricama, množenje matrica, zapravo posledica analize ponašanja linearnih transformacija.
+Rešavanje sistema linearnih jednačina pokazujemo koristeći nekoliko strategija, od kojih neke imaju
+samo teorijski značaj, i glavu zaključujemo demonstracijom tehnike za nalaženje inverzne matrice date matrice.
+
+Rešavanje sistema jednačina
+
+Rešavanje sistema linearnih jednačina predstavlja važnu
+temu u savremenoj matematici jer se mnogi fenomeni u nauci mogu modelovati
+sistemima linearnih jednačina. Tipičan primer predstavlja analiza
+električnih kola primenom Kirhofovih zakona !!!CITIRATI KNJIGU: BOYD.
+Drugi važan izvor motivacije za razmatranja u ovom poglavlju su linearne transformacije !!!CITIRATI KNJIGU: AXLER.
+Recimo, Lorencova transformacija opisuje promenu parametara (položaja i vremena) materijalne tačke
+u jednom referentnom sistemu kada se ona posmatra iz drugog referentnog sistema. Ako pretpostavimo
+da se referentni sistem u kome se nalazi materijalna tačka kreće konstantnom brzinom !!!MATEMATIKA: v, pravolinijski
+duž !!!MATEMATIKA: x-ose referentnog sistema posmatrača, onda se veza izme\dj u koordinata
+!!!MATEMATIKA: (x, y, z, t) materijalne tačke
+u njenom referentnom sistemu i koordinata !!!MATEMATIKA: (x', y', z', t') u referentnom sistemu posmatrača
+može opisati na sledeći način:
+
+!!!ISTAKNUTA FORMULA
+
+gde je !!!MATEMATIKA: c brzina svetlosti i !!!MATEMATIKA: (FORMULA). Primetimo da su
+!!!MATEMATIKA: c, !!!MATEMATIKA: v i !!!MATEMATIKA: (MALO GRČKO SLOVO GAMA)
+konstante. Ovo je primer transformacije koordinata !!!MATEMATIKA: (FORMULA).
+Lorencove transformacije samo specijalan slučaj opšte linearne tranformacije !!!MATEMATIKA: (FORMULA):
+
+!!!ISTAKNUTA FORMULA
+
+gde su !!!MATEMATIKA: (FORMULA) neki realni brojevi.
+
+Definicija determinante
+
+Definicija.
+Neka je !!!MATEMATIKA: n prirodan broj i neka su !!!MATEMATIKA: (FORMULA) proizvoljni realni brojevi, !!!MATEMATIKA: (FORMULA).
+Determinanta reda !!!MATEMATIKA: n je algebarski izraz oblika
+
+!!!ISTAKNUTA FORMULA
+
+gde je !!!MATEMATIKA:(formula) skup svih permutacija skupa !!!MATEMATIKA:(FORMULA).
+Kraće pišemo i !!!MATEMATIKA:(FORMULA).
+
+
+Tri kratka komentara:
+
+kao što smo i nagovestili, sumiranje se vrši po svim permutacijama skupa !!!MATEMATIKA:(FORMULA);
+
+zato je determinanta reda !!!MATEMATIKA:(FORMULA) algebarski izraz koji ima !!!MATEMATIKA:(FORMULA) sabiraka;
+
+ako je !!!MATEMATIKA:(FORMULA) parna permutacija onda je broj !!!MATEMATIKA:(FORMULA) paran, pa je !!!MATEMATIKA:(FORMULA);
+ako je !!!MATEMATIKA:(FORMULA) neparna permutacija onda je broj !!!MATEMATIKA:(FORMULA) neparan, pa je !!!MATEMATIKA:(FORMULA);
+tako smo zapisali činjenicu da se sabirci koji odgovaraju parnim permutacijama uzimaju sa znakom !!!MATEMATIKA:(FORMULA),
+dok se sabirci koji odgovaraju neparnim permutacijama uzimaju sa znakom !!!MATEMATIKA:(FORMULA).
+
+Osobine determinanti
+
+Teorema. (Vrsta/kolona koja se sastoji od nula)
+Ako se u determinanti !!!MATEMATIKA:(FORMULA) neka vrsta ili kolona sastoji isključivo od nula, onda je !!!MATEMATIKA:(FORMULA).
+
+Dokaz.
+  Primetimo, prvo, da svaki sabirak u definiciji determinante sadrži tačno jedan element svake
+  vrste determinante, i tačno jedan element svake kolone determinante.
+  To je ključni sastojak u dokazu koji sledi.
+  Neka se u determinanti !!!MATEMATIKA:(FORMULA) vrsta !!!MATEMATIKA:(FORMULA) sastoji isključivo od nula:
+  !!!MATEMATIKA:(FORMULA).
+  Tada je !!!MATEMATIKA:(FORMULA) za svako !!!MATEMATIKA:(FORMULA) što znači da je svaki sabirak u izrazu
+
+  !!!ISTAKNUTA FORMULA
+
+  jednak nuli. Dakle, !!!MATEMATIKA:(FORMULA).
+
+Osim ove osobine, determinante imaju još niz važnih osobina koje koristimo da bismo
+efektivno odrediti vrednost determinante. Sada samo navodimo osobine i tek po koji dokaz, dok ostale, često veoma komplikovane
+dokaze dajemo u sledećem odeljku za posebno motivisane čitaoce.
+
+Teorema. (Zamena mesta dvema vrstama/kolonama determinante)
+  Neka je !!!MATEMATIKA: D' determinanta koja se dobija od determinante !!!MATEMATIKA: D tako što dve vrste (ili dve kolone)
+  zamene mesta. Tada je !!!MATEMATIKA: D' = -D.
+
+
+Teorema. (Dve jednake vrste/kolone)
+  Ako su u determinanti !!!MATEMATIKA: D neke dve vrste jednake, ili neke dve kolone jednake, onda je !!!MATEMATIKA: D = 0.
+
+
+Kramerova teorema
+
+Kramerova teorema predstavlja važan teorijski rezultat koji nam opisuje strukturu rešenja
+kvadratnih sistema linearnih jednačina. Ova teorema nije pogodna za efikasno rešavanje sistema
+linearnih jednačina i zato je njen značaj isključivo teorijski.
+Posmatrajmo sledeći sistem !!!MATEMATIKA: n linearnih jednačina sa !!!MATEMATIKA: n nepoznatih:
+
+!!!ISTAKNUTA FORMULA
+
+Neka je !!!MATEMATIKA:(FORMULA) determinanta sistema i neka je, za svako !!!MATEMATIKA:(FORMULA),
+sa !!!MATEMATIKA:(FORMULA) označena determinanta koja se dobija tako što se !!!MATEMATIKA: i-ta kolona
+determinante !!!MATEMATIKA: D zameni kolonom koju čine slobodni članovi:
+
+!!!ISTAKNUTA FORMULA
+
+Teorema. (Kramerova teorema)
+  Ako za kvadratni sistem reda !!!MATEMATIKA: n znamo da je !!!MATEMATIKA:(FORMULA),
+  tada je sistem odre\dj en i njegovo jedinstveno rešenje je dato sa:
+
+  !!!ISTAKNUTA FORMULA
+
+Dokaz.
+  Neka je !!!MATEMATIKA:(FORMULA) determinanta reda !!!MATEMATIKA: n - 1 koja se dobija izbacivanjem
+  !!!MATEMATIKA: p-te vrste i !!!MATEMATIKA: q-te kolone determinante !!!MATEMATIKA:D.
+  Kada prvu jednačinu sistema pomnožimo sa !!!MATEMATIKA:(FORMULA), drugu pomnožimo sa
+  !!!MATEMATIKA:(FORMULA), treću sa !!!MATEMATIKA:(FORMULA), !!!TRI TAČKE, !!!MATEMATIKA:i-tu sa
+  !!!MATEMATIKA:(FORMULA), i sve to saberemo, dobijamo:
+  
+  !!!ISTAKNUTA FORMULA
+  
+  Izraz koji moži promenljivu !!!MATEMATIKA:(FORMULA) predstavlja razvoj determinante !!!MATEMATIKA:(FORMULA)
+  po elementima njene prve kolone, dok izrazi koji množe promenljive !!!MATEMATIKA:(FORMULA), !!!TRI TAČKE,
+  !!!MATEMATIKA:(FORMULA) predstavljaju razvoj determinante !!!MATEMATIKA:(FORMULA) po elementima ``pogrešne'' kolone.
+  S druge strane, slobodni član predstavlja razvoj determinante !!!MATEMATIKA:(FORMULA) po elementima njene prve kolone.
+  Koristeći teoremu o razvoju determinante po elementima prve kolone, i koristeći činjenicu da je
+  razvoj determinante po elementima ``pogrešne kolone'' jednak 0, prethodna jednačina se može
+  zapisati ovako:
+  
+  !!!ISTAKNUTA FORMULA
+  
+  Kako je !!!MATEMATIKA:(FORMULA) dobijamo !!!MATEMATIKA:(FORMULA). Na isti način se dobija da je
+  !!!MATEMATIKA:(FORMULA) za sve !!!MATEMATIKA:(FORMULA).
+
+
+Pojam matrice, operacije sa matricama
+
+Matrica je pravougaona šema brojeva čije dimenzije zovemo
+format matrice !!!CITIRATI KNJIGU: KLEIN. Na primer:
+
+!!!ISTAKNUTA FORMULA
+
+Skup svih matrica formata !!!MATEMATIKA:(FORMULA) sa elementima iz !!!MATEMATIKA:(FORMULA)
+označavamo sa !!!MATEMATIKA:(FORMULA). Matrice istog formata se sabiraju tako što se saberu elementi na odgovarajućim mestima.
+Kraće pišemo ovako:
+
+!!!ISTAKNUTA FORMULA
+
+Matrica se množi brojem tako što se svaki element matrice pomnoži tim brojem.
+Kraće pišemo još i ovako:
+
+!!! ISTAKNUTA FORMULA
+
+Proizvod kompatibilnih
+matrica !!!MATEMATIKA:(FORMULA) i !!!MATEMATIKA:(FORMULA), pišemo !!!MATEMATIKA:(FORMULA), je
+matrica !!!MATEMATIKA:(FORMULA) čiji elementi se računaju na
+sledeći način:
+
+!!!ISTAKNUTA FORMULA
+
+Teorema.
+  Moženje matrica je asocijativno. Preciznije, ako je !!!MATEMATIKA:A matrica formata !!!MATEMATIKA:(FORMULA),
+  !!!MATEMATIKA:B matrica formata !!!MATEMATIKA:(FORMULA) i !!!MATEMATIKA:C matrica formata
+  !!!MATEMATIKA:(FORMULA), onda je !!!MATEMATIKA:(FORMULA).
+
+Postoji matrica koja prilikom množenja matrica ima istu ulogu koju broj 1 ima prilikom množenja brojeva.
+Sa !!!MATEMATIKA:(FORMULA) označavamo sledeću kvadratnu matricu reda !!!MATEMATIKA:n:
+
+!!!ISTAKNUTA FORMULA
+
+i zovemo je jedinična matrica reda !!!MATEMATIKA:n.
+Ukoliko je red matrice !!!MATEMATIKA:(FORMULA) jasan iz konteksta, umesto !!!MATEMATIKA:(FORMULA) pišemo samo !!!MATEMATIKA:E.
+
+Teorema.
+  Za proizvoljnu matricu !!!MATEMATIKA:A formata !!!MATEMATIKA:(FORMULA) je !!!MATEMATIKA:(FORMULA).
+
+Svakoj kvadratnoj matrici !!!MATEMATIKA:(FORMULA) se prirodno dodeljuje determinanta
+!!!MATEMATIKA:(FORMULA) reda !!!MATEMATIKA:n. Kažemo da je !!!MATEMATIKA:D determinanta matrice !!!MATEMATIKA:A.
+
+Naredna teorema pokazuje da se determinanta ``slaže'' sa množenjem kvadratnih matrica istog reda
+u sledećem smislu: !!!MATEMATIKA:(FORMULA).
+
+Teorema.
+  Neka su !!!MATEMATIKA:A i !!!MATEMATIKA:B kvadratne matrice istog reda. Tada je !!!MATEMATIKA:(FORMULA).
+
+
+Literatura
+
+Sheldon Axler: ``Linear Algebra Done Right'' (2nd Ed.), Springer-Verlag New York Berlin Heidelberg 1997.
+
+Stephen Boyd, Lieven Vandenberghe: ``Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Square'',
+Cambridge University Press 2018.
+
+Philip N. Klein: ``Coding the Matrix -- Linear Algebra through Applications to Computer Science''.
+Newtonian Press 2015.

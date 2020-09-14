@@ -1,0 +1,210 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[serbian]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\astop}{\mathop{\displaystyle\mathrm{\ast}}}
+\newcommand{\impliesid}{\mathop{\Rightarrow}}
+
+\newtheorem*{theorem*}{Teorema}
+
+\begin{document}
+% \[
+%     f(x)\stackrel{\mathrm{def}}{=}\cos x
+% \]
+
+% \[
+%     \sum_{
+%     {I\subseteq \{1, 2 \ldots, n\}}
+%     \atop{|I| \geq k}}a_I
+% \]
+
+% \[
+%     \sum_{
+%         {0 \leq i \leq r
+%         \atop{0 \leq j \leq s}}
+%         \atop{0 \leq k \leq t}}C(i, j, k)
+% \]
+% \[
+%     \alpha \atopwithdelims<> \beta
+% \]
+
+% \[
+%     \alpha \atopwithdelims() \beta
+% \]
+
+% \[
+%     x \! x
+% \]
+% \[
+%     x \; x
+% \]
+% \[
+%     x \quad x
+% \]
+% \[
+%     x \qquad x
+% \]
+
+% \[
+%     \int_0^\infty e^{-x^2}\, dx=\sqrt{2\pi}
+% \]
+% % \[
+% %     \int\!\!\int\limits_0^\infty e^{-x^2}\, dx=\sqrt{2\pi}
+% % \]
+% % $\int\limits_0^\infty e^{-x^2}\, dx=\sqrt{2\pi}$
+% \[
+%     \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}
+% \]
+% \[
+%     \int_a^b \, \textstyle {1 \overwithdelims() x} \, dx
+% \]
+
+% \[
+%     \astop\limits_{i=1}^n f_i.
+% \]
+
+% Sizes
+
+% \[
+%     \Biggl( \biggl( \Bigl( \bigl( x + 1\bigr) \Bigr) \biggr) \Biggr)
+% \]
+% \[
+%     y \Biggm/ x
+% \]
+\section{Zadatak 7a}
+
+\textbf{Primer: Problem sa terijerima i kometama.} Iz slede\'ce tri premise izvesti
+odgovaraju\'ci zaklju\v{c}ak:
+
+\begin{enumerate}
+    \item Nijedan terijer ne luta me\dj u zvezdama.
+    \item Ni\v{s}ta \v{s}to ne luta me\dj u zvezdama nije kometa.
+    \item Samo terijeri imaju kovrd\v{z}av rep.
+\end{enumerate}
+
+\noindent
+\textit{Re\v{s}enje.} Uvedimo slede\'ce oznake:
+\begin{align*}
+    T &= \text{terijer}, &&L = \text{luta me\dj u zvezdama} \\
+    K &= \text{kometa}, &&R = \text{ima kovrd\v{z}av rep}
+\end{align*}
+
+\noindent
+Prethodne tri izjave mo\v{z}emo formalno da zapi\v{s}emo ovako:
+\begin{enumerate}
+    \item $T \Rightarrow \neg L$ (ako je terijer onda ne luta zvezdama);
+    \item $\neg L \Rightarrow \neg K$ (ako ne luta me\dj u zvezdama onda nije kometa); i 
+    \item $R \Rightarrow T$ (ako ima kovrd\v{z}av rep onda je to terijer).
+\end{enumerate}
+
+\noindent
+Sada se lako uo\v{c}ava niz implikacija:
+\[
+    R \impliesid_{(3)} T \impliesid_{(1)} \neg L \impliesid_{(2)} \neg K
+\]
+
+\noindent
+Dakle, $R \Rightarrow \neg K$. Imaju\'ci u vidu da je $R \Rightarrow \neg K \equiv K \Rightarrow \neg R$ zaklju\v{c}ujemo,
+tako\dj e, da je $K \Rightarrow \neg R$, odnosno, da \emph{komete nemaju kovrd\v{z}av rep}.
+
+\section{Zadatak 7b}
+\textbf{Primer.} Gde je gre\v{s}ka u slede\'cem ``dokazu'' da je 1 = 2:
+\begin{align*}
+    -2 &= -2 \\
+    1-3 &= 4-6 \\
+    1+3 + \frac{9}{4} &= 4 - 6 + \frac{9}{4} \\
+    \biggl( 1 - \frac{3}{2} \biggr)^2 &= \biggl(2 - \frac{3}{2} \biggr)^2 \\
+    \sqrt{\biggl( 1 - \frac{3}{2} \biggr)^2} &= \sqrt{\biggl(2 - \frac{3}{2} \biggr)^2} \\
+    1 - \frac{3}{2} &= 2 - \frac{3}{2} \\
+    1 &= 2
+\end{align*}
+
+\pagebreak
+\section{Zadatak 7c}
+\begin{center}
+    \large\textbf{Dokazi kontrapozicijom}
+\end{center}
+
+\vspace*{6px}
+
+\normalsize
+Nekada se de\v{s}ava da nije lako na\'ci direktan dokaz. Jedan na\v{c}in da doka\v{z}emo tvr\dj enje oblika
+$p \Rightarrow q$ je da koristimo tautologiju
+\[
+    \models (p \Rightarrow q) \Leftrightarrow (\neg q \Rightarrow \neg p)
+\]
+
+\noindent
+koja ka\v{z}e da je logi\v{c}ki svejedno da li \'cemo dokazivati da
+\[
+    p \Rightarrow q
+\]
+
+\noindent
+ili da
+\[
+    \neg q \Rightarrow \neg p.
+\]
+
+\noindent
+Dokazi zasnovani na ovoj strategiji se zovu \emph{dokazi kontrapozicijom}.
+
+\vspace*{6px}
+\noindent
+\textbf{Primer.} \quad Neka je $n$ prirodan broj. Ako je $n^2$ paran onda je i $n$ paran broj.
+\begin{proof}
+    Treba da poka\v{z}emo slede\'ce:
+    \[
+        \underbrace{n^2 \; \text{je paran broj}}_p \Rightarrow \underbrace{n \; \text{je paran broj}}_q
+    \]
+    Kontrapozicija ovog tvr\dj enja glasi:
+    \[
+        \underbrace{n \; \text{je neparan broj}}_{\neg q} \Rightarrow \underbrace{n^2 \; \text{je neparan broj}}_{\neg p}
+    \]
+    i to se lako dokazuje. Neka je $n$ neparan broj. Tada je
+    \[
+        n = 2k + 1
+    \]
+    za neko $k \geq 0$. No, tada je
+    \[
+        n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2 \underbrace{(2k^2 + 2k)}_m + 1 = 2m + 1
+    \]
+    \v{s}to zna\v{c}i da je $n^2$ neparan broj.
+\end{proof}
+
+\section{Zadatak 7d}
+
+\begin{theorem*}[Gvido Fubini]
+    \normalfont
+    Neka su $X$ i $Y$ prostori sa $\sigma$-kona\v{c}nom merom i neka je 
+    $f: X \times Y \rightarrow \mathbb{R}$ merljiva funkcija takva da je 
+    \[
+        \int\limits_{X \times Y} |f(x, y)| d(x, y) < \infty
+    \]
+    Tada je
+    \[
+        \int\limits_X \Biggl(\int\limits_Y f(x, y)\; dy \Biggr) \; dx = 
+        \int\limits_Y \Biggl(\int\limits_X f(x, y)\; dx \Biggr) \; dy =
+        \int\limits_{X \times Y} f(x, y)\; d(x, y).
+    \]
+\end{theorem*}
+
+\pagebreak
+
+\begin{theorem*}[Srinivasa Ramanud\v{z}an]
+    \normalfont
+    Ako kompleksna funkcija $f$ ima razvoj u obliku
+    \[
+        f(x) = \sum_{k=0}^\infty \frac{\varphi (k)}{k!} (-x)^k
+    \]
+    za neko $\varphi$ onda je
+    \[
+        \int_0^\infty x^{s-1} f(x)\; dx = \Gamma (s) \varphi (-s),
+    \]
+    gde je $\Gamma(s)$ ozna\v{c}ena gama-funkcija.
+\end{theorem*}
+
+\end{document}

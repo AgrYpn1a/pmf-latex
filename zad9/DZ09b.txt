@@ -1,0 +1,59 @@
+POSLEDNJE INFORMACIJE O NOVOM KORONA VIRUSU NA DAN 17.5.2020.
+
+U Republici Srbiji je do 17. maja 2020. godine registrovano je ukupno 10610 potvrđenih slučajeva COVID-19. 
+
+Do 17. maja 2020. godine, u nacionalnim referentnim laboratorijama testirana je  ukupno 181 272 osoba koja je ispunjavala kriterijume definicije slučaja. 
+
+Od poslednjeg izveštaja, testirano je 6526 uzoraka od kojih je 114 pozitivna.U poslednja 24 časa procenat pozitivnih u odnosu na broj testiranih na koronavirus je 1,75 odsto. 764  je hospitalizovanih, 18 na respiratoru, 4713 je do sada izlečeno, dok je 2 nova smrtna slučaja od prošlog izveštavanja. 230 osobe su umrle do sada,  sa procentom smrtnosti 2,17%.
+
+Veći od uobičajenog broja pozitivnih u Srbiji je posledica lokalnog žarišta u Vranju, gde je 53 od 114 novih pozitivnih. Zahvaljujući proširenom testiranju i većim kapacitetima za testiranje, žarište u Vranju je identifikovano u ranoj fazi i situacija, koja se prati kontinuirano, je već lokalizovana i pod kontrolom. Žariše je fabrika nameštaja “Dodić” koja je privremeno zatvorena, a testirani su kako zaposleni, tako i njihove porodice i ljudi sa kojima su bili u kontaktu. Zaraženi su u najvećoj meri asimptomatski bolesnici, bez ili sa minimalnim tegobama.
+
+Ukoliko se žarište iz Vranja isključi iz analize, brojevi u Srbiji i dalje pokazuju kontinuiran trend opadanja ispod 1% zaraženih od ukupno testiranih (0,97% u proteklih 24 časa).
+
+Srbija trenutno testira između 2 i 10 puta više po glavi stanovnika dnevno u poređenju sa regionom (preko 10 puta više od Albanije, 4 puta od Hrvatske i oko 2 puta više od Slovenije i Mađarske). Cilj je da se ovakvim obuhvatom testiranja uhvate sva potencijalna lokalna žarišta i stave pod kontrolu bez daljeg širenja kako bi se COVID-19 virus u potpunosti iskorenio na teritoriji Republike Srbije.
+
+U svetu je prijavljeno ukupno 4.405.680 obolelih od infekcije izazvane novim koronavirusom (COVID-19), uključujući 302.115 smrtnih ishoda.
+Slučajevi COVID-19 su registrovani u ukupno 207 zemalja i na jednom brodu ukotvljenom u luci Jokohama u Japanu.
+
+U Evropi je registrovano 1.790.115 potvrđenih slučajeva infekcije novim koronavirusom i 162.826 smrtnih ishoda.
+Evropski centar za prevenciju i kontrolu bolesti (ECDC). Dostupno na: https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases
+Videti sliku !!!
+
+[Slika: corona1305.jpg]
+
+Područjem intenzivne transmisije virusa se smatraju države, odnosno područja u kojima se registruju u većem broju slučajevi za koje nije moguče utvrditi lanac transmisije.
+U ovom trenutku područjima intenzivne transmisije virusa SARS-CoV-2 smatraju se: Švajcarska Konfederacija, Republika Italija, Islamska Republika Iran, Rumunija,
+Kraljevina Španija, Savezna Republika Nemačka, Francuska Republika, Republika Austrija, Republika Slovenija i Republika Grčka.
+Podaci za prvih 20 država sveta dati su u tabeli !!!
+
+    Red. br	Država	Potvrđenih slučajeva	Smrtnih ishoda\\
+%\hline
+    1.	Rusija	252245	2305
+    2.	Ujedinjeno Kraljevstvo	233151	33614
+    3.	Španija	229540	27321
+    4.	Italija	223096	31368
+    5.	Nemačka	173152	7824
+    6.	Turska	144749	4007
+    7.	Francuska	141356	27425
+    8.	Belgija	54288	8903
+    9.	Holandija	43481	5590
+    10.	Švajcarska	30380	1588
+    11.	Švedska	28582	3529
+    12.	Portugalija	28319	1184
+    13.	Belorusija	26772	151
+    14.	Irska	23827	1506
+    15.	Poljska	17615	883
+    16.	Ukrajina	16847	456
+    17.	Rumunija	16247	1046
+    18.	Austrija	16005	626
+    19.	Danska	10713	537
+    20.	Češka	8351	293
+
+Broj potvrđenih slučajeva COVID-19 u ostalim zemljama Evrope (17.05.2020. u 8h; prvih 20 država)
+
+
+
+
+
+
+

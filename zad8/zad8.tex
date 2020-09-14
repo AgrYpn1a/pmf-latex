@@ -1,0 +1,207 @@
+% Equation settings: leqno, fleqn
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[serbian]{babel}
+
+\usepackage[a4paper, total={5in, 8in}]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem{define}{Definicija}
+\newtheorem{example}{Primer}
+
+\begin{document}
+
+% \[
+%     \left[
+%     \begin{array}[]{lcr}
+%         x-\lambda & 1 & 0 \\
+%         0 & x - \lambda & 1 \\
+%         0 & 0 & x - \lambda
+%     \end{array}
+%     \right]
+% \]
+
+% \begin{equation}
+%     a^2 = b^2 + c^2
+% \end{equation}
+% \[
+%     \frac{\Gamma \vdash B}{\Gamma, !A \vdash B}
+%     \eqno\mathrm{(weakening)}    
+% \]
+
+% \begin{eqnarray}
+%     E &=& \hbar \cdot \nu \\
+%     E &=& m \cdot c^2
+% \end{eqnarray}
+
+\section{Determinante}
+
+\begin{define}
+    Neka je n prirodan broj i neka su $a_ij$ proizvoljni realni brojevi, $1 \leq i, j \leq n$. 
+    Determinanta reda $n$ je algebarski izraz oblika
+    \[
+        D = \left|
+            \begin{array}[]{lccr}
+            a_{11} & a_{12} & \ldots & a_{1n} \\
+            a_{21} & a_{22} & \ldots & a_{2n} \\
+            \vdots & \vdots & & \vdots \\
+            a_{n1} & a_{n2} & \ldots & a_{nn}
+            \end{array}
+            \right| = 
+            \sum_{f \in S_n} (-1)^{\mathrm{inv}(f)} a_{1f_1} a_{2f_2} \ldots a_{nf_n},
+    \]
+    gde je $S_n$ skup svih permutacija skupa $\{1, 2, \ldots, n\}$. Kra\'ce pi\v{s}emo i $D = |a_{ij}|_{n \times n}$.
+\end{define}
+
+\section{Matrice}
+\begin{define}
+    {\normalfont Proizvod} kompatibilnih matrica $A = [a_{ij}]_{k \times n}$ i $B = [b_{ij}]_{n \times m}$,
+    pi\v{s}emo $C = AB$, je matrica $C = [c_{ij}]_{k \times m}$ \v{c}iji se elementi ra\v{c}unaju na slede\'ci na\v{c}in:
+    \[
+        C_{ij} = \sum_{s=1}^n a_{is}b_{sj}.
+    \]
+    Ova formula prakti\v{c}no zna\v{c}i da se element na mestu $(i, j)$ matrice $C$ dobija tako \v{s}to se
+    $i$-ta vrsta matrice $A$ {\normalfont skalarno pomno\v{z}i} $j$-tom kolonom matrice B:
+    \[
+        \left[
+        \begin{array}[]{ccccc}
+            a_{11} & a_{12} & a_{13} & \ldots & a_{1n} \\
+            \vdots & \vdots & \vdots & & \vdots \\
+            \hline
+            a_{i1} & a_{i2} & a_{i3} & \ldots & a_{in} \\
+            \hline
+            \vdots & \vdots & \vdots & & \vdots \\
+            a_{k1} & a_{k2} & a_{k3} & \ldots & a_{kn} \\
+        \end{array}
+        \right]
+        \cdot
+        \left[
+        \begin{array}[]{cc|c|cc}
+            b_{11} & \ldots & b_{1j} & \ldots & b_{1m} \\
+            b_{21} & \ldots & b_{2j} & \ldots & b_{2m} \\
+            b_{31} & \ldots & b_{3j} & \ldots & b_{3m} \\
+            \vdots & \vdots & \vdots & & \vdots \\
+            b_{k1} & \ldots & b_{nj} & \ldots & b_{nm} \\
+        \end{array}
+        \right] =
+        \left[
+        \begin{array}[]{ccccc}
+            c_{11} & \ldots & c_{1j} & \ldots & c_{1m} \\
+            \vdots & \vdots & \vdots & & \vdots \\
+            c_{i1} & \ldots & \overline{\underline{|c_{ij}|}} & \ldots & c_{3m} \\
+            \vdots & \vdots & \vdots & & \vdots \\
+            c_{k1} & \ldots & c_{kj} & \ldots & c_{nm} \\
+        \end{array}
+        \right].
+    \]  
+
+\end{define}
+
+\pagebreak
+\section{Inverzna matrica}
+\begin{example}
+    {Izra\v{c}unati inverznu matricu matrice} $A = \left[\begin{array}[]{cccc}
+        1 & 1 & 2 & 2 \\
+        2 & 3 & 3 & 5 \\
+        2 & 1 & 4 & 3 \\
+        4 & 3 & 7 & 6 \\
+    \end{array}\right]$.
+\end{example}
+\begin{proof}[Re\v{s}enje]
+    Da bismo izra\v{c}unali inverznu matricu matrice $A$ dovoljno je re\v{s}iti po $X$ matri\v{c}nu
+    jedna\v{c}inu $AX = E$, jer \'ce tada biti $X = A^{-1}$. Dakle, treba re\v{s}iti slede\'cu matri\v{c}nu jedna\v{c}inu:
+\[
+    \left[ 
+    \begin{array}[]{cccc}
+        1 & 1 & 2 & 2 \\
+        2 & 3 & 3 & 5 \\
+        2 & 1 & 4 & 3 \\
+        4 & 3 & 7 & 6 \\
+    \end{array}
+    \right] \cdot
+    \left[ 
+    \begin{array}[]{cccc}
+        x_{11} & x_{12} & x_{13} & x_{14} \\
+        x_{21} & x_{22} & x_{23} & x_{24} \\
+        x_{31} & x_{32} & x_{33} & x_{34} \\
+        x_{41} & x_{42} & x_{43} & x_{44} \\
+    \end{array}
+    \right] = 
+    \left[ 
+    \begin{array}[]{cccc}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
+    \end{array}
+    \right]
+\]
+\end{proof}
+
+Ako strpljivo raspi\v{s}emo proizvod matrica na levoj strani, dobijamo da treba simultano re\v{s}iti
+\v{c}etiri sistema jedna\v{c}ina koji svi imaju istu matricu sistema:
+
+\begin{equation*}
+    \begin{aligned}[l]
+        x_{11} + x_{21} + 2x_{31} + 2x_{41} &=& 1 \\
+        2x_{11} + 3x_{21} + 3x_{31} + 5x_{41} &=& 0 \\
+        2x_{11} + x_{21} + 4x_{31} + 3x_{41} &=& 0 \\
+        4x_{11} + 3x_{21} + 7x_{31} + 6x_{41} &=& 0
+    \end{aligned}
+    \qquad
+    \begin{aligned}[r]
+        x_{12} + x_{22} + 2x_{32} + 2x_{42} &=& 0 \\
+        2x_{12} + 3x_{22} + 3x_{32} + 5x_{42} &=& 1 \\
+        2x_{12} + x_{22} + 4x_{32} + 3x_{42} &=& 0 \\
+        4x_{12} + 3x_{22} + 7x_{32} + 6x_{42} &=& 0
+    \end{aligned}
+\end{equation*}
+\\
+\begin{equation*}
+    \begin{aligned}[l]
+        x_{13} + x_{23} + 2x_{33} + 2x_{43} &=& 0 \\
+        2x_{13} + 3x_{23} + 3x_{33} + 5x_{43} &=& 0 \\
+        2x_{13} + x_{23} + 4x_{33} + 3x_{43} &=& 1 \\
+        4x_{13} + 3x_{23} + 7x_{33} + 6x_{43} &=& 0
+    \end{aligned}
+    \qquad
+    \begin{aligned}[r]
+        x_{14} + x_{24} + 2x_{34} + 2x_{44} &=& 0 \\
+        2x_{14} + 3x_{24} + 3x_{34} + 5x_{44} &=& 0 \\
+        2x_{14} + x_{24} + 4x_{34} + 3x_{44} &=& 0 \\
+        4x_{14} + 3x_{24} + 7x_{34} + 6x_{44} &=& 1
+    \end{aligned}
+\end{equation*}
+
+Primeni\'cemo Gaus-\v{Z}ordanovu eliminaciju:
+\[
+    \left[
+        \begin{array}[]{cccc|cccc}
+            1 & 1 & 2 & 2 & 1 & 0 & 0 & 0 \\
+            2 & 3 & 3 & 5 & 0 & 1 & 0 & 0 \\
+            2 & 1 & 4 & 3 & 0 & 0 & 1 & 0 \\
+            4 & 3 & 7 & 6 & 0 & 0 & 0 & 1 \\
+        \end{array}
+    \right]
+    \sim \ldots \sim
+    \left[
+        \begin{array}[]{cccc|rrrr}
+            1 & 0 & 0 & 0 & -7 & 1 & 1 & 1 \\
+            0 & 1 & 0 & 0 & 4 & -1 & -3 & 1\\
+            0 & 0 & 1 & 0 & 4 & -1 & -1 & 0 \\
+            0 & 0 & 0 & 1 & -2 & 1 & 2 & -1\\
+        \end{array}
+    \right]
+\]
+
+Prema tome, $A^{-1} = \left[ \begin{array}{rrrr}
+    -7 & 1 & 1 & 1 \\
+    4 & -1 & -3 & 1\\
+    4 & -1 & -1 & 0 \\
+    -2 & 1 & 2 & -1\\
+ \end{array}\right]$
+
+\end{document}

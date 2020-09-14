@@ -1,0 +1,53 @@
+Broj potvrđenih slučajeva COVID-19 u ostalim zemljama Evrope (02.04.2020. u 8h)
+Red. br	Država	Potvrđenih slučajeva	Smrtnih ishoda
+1.	Italija	110574	13157
+2.	Španija	102136	9053
+3.	Nemačka	73522	872
+4.	Francuska	56989	4032
+5.	Ujedinjeno Kraljevstvo	29474	2532
+6.	Švajcarska	17070	378
+7.	Turska	15679	277
+8.	Belgija	13964	828
+9.	Holandija	13614	1173
+10.	Austrija	10711	146
+11.	Portugal	8251	187
+12.	Švedska	4947	239
+13.	Norveška	4665	32
+14.	Ceška Republika	3589	39
+15.	Irska	3447	85
+16.	Danska	3107	104
+17.	Rusija	2777	24
+18.	Poljska	2554	43
+19.	Rumunija	2460	85
+20.	Luksemburg	2319	29
+21.	Finska	1446	17
+22.	Grčka	1375	50
+23.	Island	1220	2
+24.	Hrvatska	963	6
+25.	Slovenija	841	15
+26.	Ukrajina	794	20
+27.	Estonija	779	5
+28.	Litvanija	581	8
+29.	Jermenija	571	3
+30.	Mađarska	525	20
+31.	Bosna i Hercegovina	464	13
+32.	Letonija	446	0
+33.	Moldavija	423	5
+34.	Bugarska	422	10
+35.	Slovacka	400	0
+36.	Andora	390	14
+37.	Azerbejdžan	359	5
+38.	Severna Makedonija	354	10
+39.	Kipar	320	9
+40.	Albanija	259	15
+41.	San Marino	236	8
+42.	Malta	188	0
+43.	Farska ostrva	173	0
+44.	Belorusija	152	0
+45.	Crna Gora	123	1
+46.	Gruzija	115	0
+47.	Lihtenštajn	72	0
+48.	Gibraltar	69	0
+49.	Ostrvo Men	65	0
+50.	Monako	55	0
+51.	Vatikan	6	0

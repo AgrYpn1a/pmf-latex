@@ -1,0 +1,94 @@
+Zadatak. Napisati C# program koji od korisnika u\v citava prirodan broj izme\dj u
+1 i 2000000000 i potom izgovara taj broj re\v cima, na srpskom.
+
+Re\v senje.
+
+using System;
+
+class IzgovoriBroj {
+  static void Main() {
+    int n = int.Parse(Console.ReadLine());
+    if(n < 1 || n > 2000000000) {
+      Console.Write("Broj izvan opsega");
+    }
+    else {
+      string[] jedinice_m = {
+        "", "jedan", "dva", "tri", "cetiri", "pet", "sest", "sedam", "osam",
+        "devet", "deset", "jedanaest", "dvanaest", "trinaest", "cetrnaest",
+        "petnaest", "sesnaest", "sedamnaest", "osamnaest", "devetnaest"
+      };
+      string[] jedinice_z = {
+        "", "jedna", "dve", "tri", "cetiri", "pet", "sest", "sedam", "osam",
+        "devet", "deset", "jedanaest", "dvanaest", "trinaest", "cetrnaest",
+        "petnaest", "sesnaest", "sedamnaest", "osamnaest", "devetnaest"
+      };
+      string[] desetice = {
+        "", "", "dvadeset", "trideset", "cetrdeset", "pedeset", "sezdeset",
+        "sedamdeset", "osamdeset", "devedeset"
+      };
+      string[] stotine = {
+        "", "sto", "dvesta", "trista", "cetiristo", "petsto", "seststo",
+        "sedamsto", "osamsto", "devetsto"
+      };
+      
+      int m, k, d;
+      
+      // milijarde; m je 0, 1 ili 2
+      m = n / 1000000000; n = n % 1000000000;
+      if(m == 1) { Console.Write("jedna milijarda "); }
+      if(m == 2) { Console.Write("dve milijarde "); }
+      
+      // milioni; m je trocifren broj
+      m = n / 1000000; n = n % 1000000;
+      if(m > 0) {
+        k = m / 100;
+        if(k > 0) { Console.Write(stotine[k] + " "); }
+        k = m % 100;
+        if(k >= 20) {
+          d = k / 10; k = k % 10;
+          if(d > 0) { Console.Write(desetice[d] + " "); }
+        }
+        if(k > 0) { Console.Write(jedinice_m[k] + " "); }
+        
+        // treba odluciti da li izgovaramo "milion" ili "miliona"
+        if(m % 10 == 1 && m % 100 != 11) { Console.Write("milion "); }
+        else { Console.Write("miliona "); }
+      }
+
+      // hiljade; m je trocifren broj
+      m = n / 1000; n = n % 1000;
+      if(m > 0) {
+        k = m / 100;
+        if(k > 0) { Console.Write(stotine[k] + " "); }
+        k = m % 100;
+        if(k >= 20) {
+          d = k / 10; k = k % 10;
+          if(d > 0) { Console.Write(desetice[d] + " "); }
+        }
+        if(k > 0) { Console.Write(jedinice_z[k] + " "); }
+        
+        // treba odluciti da li izgovaramo "hiljada" ili "hiljade"
+        if((m % 10 == 2 || m % 10 == 3 || m % 10 == 4) &&
+           (m % 100 != 12 && m % 100 != 13 && m % 100 != 14)) {
+             Console.Write("hiljade ");
+        }
+        else { Console.Write("hiljada "); }
+      }
+
+      // jedinice; m je trocifren broj
+      m = n;
+      if(m > 0) {
+        k = m / 100;
+        if(k > 0) { Console.Write(stotine[k] + " "); }
+        k = m % 100;
+        if(k >= 20) {
+          d = k / 10; k = k % 10;
+          if(d > 0) { Console.Write(desetice[d] + " "); }
+        }
+        if(k > 0) { Console.Write(jedinice_m[k] + " "); }
+      }
+      Console.WriteLine();
+    }
+  }
+}
+

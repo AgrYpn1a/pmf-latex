@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+
+\usepackage[serbian]{babel}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{definition}{Definicija}
+\newtheorem{theorem}{Teorema}
+
+
+\begin{document}
+
+\begin{center}
+    {\LARGE Kratak uvod u matrice i determinante \\}
+    \vspace{0.6cm}
+    {\Large Dragan Mašulović} \\
+    \vspace{0.4cm}
+    {\Large 7. maj 2020.}
+\end{center}
+\vspace{0.5cm}
+\begin{abstract}
+    Analiziranje rešenja sistema jednačina nas vodi do pojma determinante, čemo je posvećen početak
+poglavlja. Nakon toga uvodimo pojam matrice i pokazujemo da je najsločenija i najneintuitivnija
+operacija nad matricama, množenje matrica, zapravo posledica analize ponašanja linearnih transformacija.
+Rešavanje sistema linearnih jednačina pokazujemo koristeći nekoliko strategija, od kojih neke imaju
+samo teorijski značaj, i glavu zaključujemo demonstracijom tehnike za nalaženje inverzne matrice date matrice.
+\end{abstract}
+
+\section{Rešavanje sistema jednačina}
+Rešavanje sistema linearnih jednačina predstavlja važnu
+temu u savremenoj matematici jer se mnogi fenomeni u nauci mogu modelovati
+sistemima linearnih jednačina. Tipičan primer predstavlja analiza
+električnih kola primenom Kirhofovih zakona \cite{BOYD}.
+Drugi važan izvor motivacije za razmatranja u ovom poglavlju su linearne transformacije \cite{AXLER}.
+Recimo, Lorencova transformacija opisuje promenu parametara (položaja i vremena) materijalne tačke
+u jednom referentnom sistemu kada se ona posmatra iz drugog referentnog sistema. Ako pretpostavimo
+da se referentni sistem u kome se nalazi materijalna tačka kreće konstantnom brzinom $v$, pravolinijski
+duž $x$-ose referentnog sistema posmatrača, onda se veza izme\dj u koordinata $(x, y, z, t)$ materijalne tačke
+u njenom referentnom sistemu i koordinata $(x', y', z', t')$ u referentnom sistemu posmatrača
+može opisati na sledeći način:
+
+\begin{eqnarray*}
+    x' &=& \gamma(x - vt) \\
+    y' &=& y \\
+    z' &=& z \\
+    t' &=& \frac{\gamma}{c^2}(c^2t - vx)
+\end{eqnarray*}
+
+gde je $c$ brzina svetlosti i $\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$. Primetimo da su
+$c$, $v$ i $\gamma$
+konstante. Ovo je primer transformacije koordinata $(x, y, z, t) \mapsto (x', y', z', t')$
+Lorencove transformacije samo specijalan slučaj opšte linearne tranformacije $(x_1, x_2, \ldots, x_n) \mapsto (y_1, y_2, \ldots, y_m)$:
+
+\begin{eqnarray*}
+    y_1 &=& a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \\
+    y_2 &=& a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \\
+    \vdots \\
+    y_m &=& a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n,
+\end{eqnarray*}
+gde su $a_{ij}$ neki realni brojevi.
+
+\section{Definicija determinante}
+\begin{definition}
+    Neka je $n$ prirodan broj i neka su $a_{ij}$ proizvoljni realni brojevi, $1 \leq i, j \leq n$.
+Determinanta reda $n$ je algebarski izraz oblika
+\[
+    D = \left|
+    \begin{array}[]{cccc}
+        a_{11} & a_{12} & \ldots & a_{1n} \\
+        a_{21} & a_{22} & \ldots & a_{2n} \\
+        \vdots & \vdots & \hfill & \vdots \\
+        a_{n1} & a_{n2} & \ldots & a_{nn}
+    \end{array}
+    \right| = 
+    \sum_{f \in S_n} (-1)^{\mathrm{inv}(f)} a_{1f_1}a_{2f_2} \ldots a_{nf_n},
+\]
+gde je $S_n$ skup svih permutacija skupa $\{1, 2, \ldots, n\}$.
+Kraće pišemo i $D = |a_{ij}|_{n \times n}$.
+\end{definition}
+\noindent
+Tri kratka komentara:
+
+\begin{enumerate}
+    \item kao što smo i nagovestili, sumiranje se vrši po svim permutacijama skupa $\{1, 2, \ldots, n\}$;
+
+    \item zato je determinanta reda $n$ algebarski izraz koji ima $n!$ sabiraka;
+    
+    \item ako je $f$ parna permutacija onda je broj $\mathrm{inv}(f)$ paran, pa je $(-1)^{\mathrm{inv}(f)} = 1$;
+    ako je $f$ neparna permutacija onda je broj $\mathrm{inv}(f)$ neparan, pa je $(-1)^{\mathrm{inv}(f)} = -1$;
+    tako smo zapisali činjenicu da se sabirci koji odgovaraju parnim permutacijama uzimaju sa znakom $+$,
+    dok se sabirci koji odgovaraju neparnim permutacijama uzimaju sa znakom $-$.
+\end{enumerate}
+
+\pagebreak
+\section{Osobine determinanti}
+\begin{theorem}[{\textbf{Vrsta/kolona koja se sastoji od nula}}]
+Ako se u determinanti $d$ neka vrsta ili kolona sastoji isključivo od nula, onda je $D = 0$.
+\end{theorem}
+\begin{proof}[{\normalfont Dokaz}]
+    Primetimo, prvo, da svaki sabirak u definiciji determinante sadrži tačno jedan element svake
+    vrste determinante, i tačno jedan element svake kolone determinante.
+    To je ključni sastojak u dokazu koji sledi.
+    Neka se u determinanti $D$ vrsta $i$ sastoji isključivo od nula:
+    $a_{i1} = a_{i2} = \ldots = a_{in} = 0$.
+    Tada je $a_{if_i} = 0$ za svako $f \in S_n$ što znači da je svaki sabirak u izrazu
+    \[
+        \sum_{f \in S_n} (-1)^{\mathrm{inv}(f)} a_{1f1} \ldots a_{ifi} \ldots a_{nfn}
+    \]
+    jednak nuli. Dakle, $D = 0$.  
+\end{proof}
+
+Osim ove osobine, determinante imaju još niz važnih osobina koje koristimo da bismo
+efektivno odrediti vrednost determinante. Sada samo navodimo osobine i tek po koji dokaz, dok ostale, često veoma komplikovane
+dokaze dajemo u sledećem odeljku za posebno motivisane čitaoce.
+
+\begin{theorem}[{\textbf{Zamena mesta dvema vrstama/kolonama determinante}}]
+    Neka je $D'$ determinanta koja se dobija od determinante $D$ tako što dve vrste (ili dve kolone)
+    zamene mesta. Tada je $D' = -D$.
+\end{theorem}
+
+\begin{theorem}[{\textbf{Dve jednake vrste/kolone}}]
+  Ako su u determinanti $D$ neke dve vrste jednake, ili neke dve kolone jednake, onda je $D = 0$.
+\end{theorem}
+
+\section{Kramerova teorema}
+
+Kramerova teorema predstavlja važan teorijski rezultat koji nam opisuje strukturu rešenja
+kvadratnih sistema linearnih jednačina. Ova teorema nije pogodna za efikasno rešavanje sistema
+linearnih jednačina i zato je njen značaj isključivo teorijski.
+Posmatrajmo sledeći sistem $n$ linearnih jednačina sa $n$ nepoznatih:
+
+
+\begin{thebibliography}{xx}
+    \bibitem{AXLER} Sheldon Axler: ``Linear Algebra Done Right'' (2nd Ed.), Springer-Verlag New York Berlin Heidelberg 1997.
+    \bibitem{BOYD} Stephen Boyd, Lieven Vandenberghe: ``Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Square'',
+Cambridge University Press 2018.
+    \bibitem{KLEIN} Philip N. Klein: ``Coding the Matrix -- Linear Algebra through Applications to Computer Science''.
+Newtonian Press 2015.
+\end{thebibliography}    
+
+\end{document}
+

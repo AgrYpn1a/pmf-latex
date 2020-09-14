@@ -1,0 +1,166 @@
+\documentclass[12pt, a4paper]{article}
+
+
+% Preamble
+\usepackage[serbian]{babel}
+
+% Math stuff
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\newtheorem*{theorem*}{Teorema}
+\newtheorem{theorem}{Teorema}
+\newtheorem*{lemma*}{Lema}
+
+\newcommand{\doubleint}{\mathop{\int\!\!\int}}
+
+\begin{document}
+
+
+    % % Exponents, indices, fractions...
+    % $$  
+    %     2^{2^n} \quad \mathrm{and} \quad x^{y^z}_{k_n}
+    % $$
+
+    % math\textsuperscript{mode}
+
+    % $$
+    %     \frac{x}{y}, \frac{2}{y}, \quad \mathrm{and} \quad \frac{x}{3}
+    % $$
+
+    % % \displaystyle; \textstyle, \scriptstyle, \scriptscriptstyle
+    % \begin{displaymath}
+    %     {x+ \scriptstyle\frac{1}{x} \above1pt \displaystyle y+\frac{1}{y}}
+    % \end{displaymath}
+
+    % \[
+    %     {x+\frac{1}{x} \above1pt y+\frac{1}{y}}
+    % \]
+
+    % \[
+    %     \sqrt{x}  
+    % \]
+
+    % \[
+    %     \sqrt{\vphantom{b}a} + \sqrt{b}
+    % \]
+
+    % Functions
+
+    % % Functions
+    % \[
+    %     {\displaystyle\doubleint \above0pt \scriptstyle \{ x \in X : \|x\| \leq 1 \}}
+    % \]
+
+    \section*{Zadatak 6a}
+
+
+    \begin{theorem*}
+        Neka su $a, b \in \mathbb{R}$ takvi da je $a \geq b$ i $b \geq 0$. Tada je
+        \[
+            \frac{a+b}{2} \geq \sqrt{ab}.
+        \]
+    \end{theorem*}
+
+    \begin{proof}
+        Primetimo, prvo, da je
+        \[
+            (\sqrt{a} - \sqrt{b})^2 \geq 0
+        \]
+        zato \v{s}to je kvadrat svakog realnog broja nenegativan. (Naravno, izraz na levoj strani
+        je realan broj zato \v{s}to je $a \geq 0$ i $b \geq 0$.) Nakon kvadriranja dobijamo
+        \[
+            a - 2\sqrt{ab} + b \geq 0,
+        \]
+        odakle, nakon nekoliko elementarnih algebarskih transformacija, sledi
+        \[
+            \frac{a+b}{2} \geq \sqrt{ab},
+        \]
+        \v{s}to je i trebalo pokazati.
+    \end{proof}
+
+    Slede\'ce tvr\dj enje se dokazuje indukcijom, ali za njegov dokaz jo\v{s} uvek nemamo dovoljno
+    \LaTeX-ovskih ve\v{s}tina, pa \'cemo ga izostaviti.
+
+    \begin{theorem*}[\textbf{Nejednakost aritmeti\v{c}ke i geometrijske sredine}]
+        Neka je $n \in \mathbb{N}, n \geq 2$, i neka su $a_1, a_2, \ldots, a_n \in \mathbb{R}$ takvi da je 
+        $a_i \geq 0$ za sve $i \in \{1, 2, \ldots, n\}$. Tada je
+        \[
+            \frac{a_1 + a_2 + \ldots + a_n}{n} \geq \sqrt[n]{a_1 \cdot a_2 \cdot \ldots \cdot a_n}.
+        \]
+        Jednakost va\v{z}i ako i samo ako je $a_1 = a_2 = \ldots = a_n$.
+    \end{theorem*}
+
+    Interesantna je i slede\'ca:
+
+    \begin{theorem*}[\textbf{Nejednakost geometrijske i harmonijske sredine}]
+        Neka je $n \in \mathbb{N}, n \geq 2$, i neka su $a_1, a_2, \ldots, a_n \in \mathbb{R}$ takvi da je 
+        $a_i \geq 0$ za sve $i \in \{1, 2, \ldots, n\}$. Tada je
+        \[
+            \sqrt[n]{a_1 \cdot a_2 \cdot \ldots \cdot a_n} 
+            \geq 
+            \frac{n}{\frac{1}{a_1}+\frac{1}{a_2}+\ldots+\frac{1}{a_n}}.
+        \]
+        Jednakost va\v{z}i ako i samo ako je $a_1 = a_2 = \ldots = a_n$.
+    \end{theorem*}
+
+    \section*{Zadatak 6b}
+
+    Neka su $\vec{u} =(x_1, y_1)$ i $\vec{v} = (x_2, y_2)$ dva vektora u $\mathbb{R}^2$ odabrana tako da
+    je $\vec{u} \neq \vec{0}$ i $\vec{v} \neq \vec{0}$. Du\v{z}ina vektora $\vec{u}$ data je sa
+    \[
+        |\vec{u}| = \sqrt{x_1^2 + y_1^2},
+    \]
+    dok je skalarni proizvod vektora $\vec{u}$ i $\vec{v}$ dat sa
+    \[
+        \vec{u} \cdot \vec{v} = x_1x_2 + y_1y_2.
+    \]
+
+    \begin{theorem*}
+        Neka su $\vec{u} = (x_1, y_1)$ i $\vec{v} = (x_2, y_2)$ dva vektora u $\mathbb{R}^2$ odabrana
+        tako da je $\vec{u} \neq \vec{0}$ i $\vec{v} \neq \vec{0}$. Tada je
+        \[
+            \cos \angle (\vec{u}, \vec{v}) = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}| \cdot |\vec{v}|}.
+        \]
+    \end{theorem*}
+
+
+    \section{Zadatak 6c}
+
+    \begin{lemma*}
+        Dokazati da je 
+        \[
+            a^k - 1 = (a - 1)(a^{k-1} + a^{k-2} + \ldots + a + 1)
+        \]
+        za svaki realan broj $a$ i svaki prirodan broj $k \geq 2$.
+    \end{lemma*}
+    \begin{proof}
+        Direktnim ra\v{c}unom.
+    \end{proof}
+
+    \begin{theorem*}[\textbf{Mersenovi brojevi}]
+        Ako je $2^n - 1$ prost broj onda je i $n$ prost broj, za svako $n \in \mathbb{N}$.
+    \end{theorem*}
+    \begin{proof}
+        Pretpostavimo da $n$ nije prost broj. Ako je $n = 1$ onda je $2^n - 1 = 1$, \v{s}to nije 
+        prost broj. Pretpostavimo, zato, da je $n \geq 2$. Kako $n$ nije prost broj, postoje prirodni
+        brojevi $m \geq 2$ i $k \geq 2$ takvi da je $n = mk$. Sada je 
+        \[
+            2^n - 1 = 2^{mk} - 1 = (2^m)^k - 1 = a^k - 1,
+        \]
+        gde smo stavili $a = 2^m$ da bismo lak\v{s}e pratili nastavak dokaza. Prema Lemi je
+        \[
+            a^k - 1 = (a - 1)(a^{k-1} + a^{k-2} + \ldots + a + 1)
+        \]
+        i zato je 
+        \[
+            2^n - 1 = (a - 1)(a^{k-1} + a^{k-2} + \ldots + a + 1).
+        \]
+        Kako je $a = 2^m$ i $m \geq 2$ zaklju\v{c}ujemo da je $a-1 \geq 3$. S druge strane iz
+        $k \geq 2$ i $a \geq 4$ sledi da je $a^{k-1} + a^{k-2} + \ldots + a + 1 \geq 5$. Dakle,
+        $2^n - 1$ je slo\v{z}en broj.
+
+
+    \end{proof}
+
+\end{document}
